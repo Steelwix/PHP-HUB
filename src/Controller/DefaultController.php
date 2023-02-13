@@ -18,6 +18,6 @@ class DefaultController extends AbstractController
     #[Route('/api/hello/{name}', name: 'api_hello')]
     public function apiHelloword(string $name): Response
     {
-        return new JsonResponse('hello ' . $name);
+        return $this->render('default/index.html.twig');
     }
 }
