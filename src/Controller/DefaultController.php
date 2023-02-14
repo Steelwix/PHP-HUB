@@ -15,10 +15,15 @@ class DefaultController extends AbstractController
         $movie = array("id" => 1, "meta" => true, "player" => "tg");
         return new JsonResponse($movie);
     }
-    #[Route('/api/ask/', name: 'api_ask')]
+    #[Route('/api/ask', name: 'api_ask')]
     public function apiAskHello(): Response
     {
         return $this->render('default/index.html.twig');
+    }
+    #[Route('/api/grafikart', name: 'api_grafikart')]
+    public function grafikartTutorial(): Response
+    {
+        return $this->render('default/grafikart.html.twig');
     }
     #[Route('/api/hello/{name}', name: 'api_name')]
     public function apiHello(string $name): Response

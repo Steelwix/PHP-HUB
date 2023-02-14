@@ -22,5 +22,5 @@ export default {
 <template>
     <input type="text" v-model="name">
     <button @click="refreshHello">Demander un bonjour !</button>
-    <h1 v-show="!!hello">{{ hello }}</h1>
+    <h1 v-show="!!hello">Hello {{ hello }}</h1>
 </template>
