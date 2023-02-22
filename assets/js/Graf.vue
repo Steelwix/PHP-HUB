@@ -6,10 +6,19 @@ export default {
             message: 'Salut à tous',
             lien: '/api/grafikart',
             success: true,
-            persons: ['John', 'Marion', 'Marine', 'Jean', 'Patoche']
-        }
+            persons: ['John', 'Marion', 'Marine', 'Jean', 'Patoche'],
+            seconds: 0
+        };
     },
     methods: {
+        mounted() {
+            this.timer = setInterval(() => {
+                console.log("Une seconde")
+            }, 1000)
+        },
+        destroyed() {
+            clearInterval(this.timer)
+        },
         close() {
             if (this.success) {
                 this.success = false
@@ -19,13 +28,18 @@ export default {
                 this.success = true
                 this.message = 'Salut à tous'
             }
+        },
+        addPerson() {
+            this.persons.push("Mael");
         }
+
     }
 }
 </script>
 
 <template>
     <a :href="lien">{{ message }}</a><br>
+    <p>Temps passé : {{ seconds }}</p>
     <button class="close icon" @click="close">X</button>
     <div class="alert  alert-dismissible" :class="success ? 'alert-success' : 'alert-danger'" role="alert">
         <p v-if="success">SECURITE ACTIVE</p>
@@ -44,5 +58,6 @@ export default {
     <ul>
         <li v-for="person in persons">{{ person }}</li>
     </ul>
+    <button @click="addPerson">Ajouter une personne</button>
     <input type="text" v-model="message">
 </template>

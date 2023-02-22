@@ -25,6 +25,11 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/grafikart.html.twig');
     }
+    #[Route('/api/dyma', name: 'api_dyma')]
+    public function dymaTutorial(): Response
+    {
+        return $this->render('default/dyma.html.twig');
+    }
     #[Route('/api/hello/{name}', name: 'api_name')]
     public function apiHello(string $name): Response
     {
