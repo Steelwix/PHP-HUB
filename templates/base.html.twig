@@ -29,6 +29,8 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
-	<body class="bg-dark text-light"> {% block body %}{% endblock %}
-		</body>
-	</html>
+	<body class="bg-dark text-light">
+		{% include "_partials/_nav.html.twig" %}
+		{% block body %}{% endblock %}
+	</body>
+</html>
