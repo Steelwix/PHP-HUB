@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\ArrayEncoder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,16 +23,6 @@ class DefaultController extends AbstractController
         $services[] = array("id" => 3, "title" => "MessageGenerator", "code" => "getHappyMessage()", "creator" => "odmgidia", "release" => "02/03/2023");
         $services[] = array("id" => 4, "title" => "DateCompare", "code" => "compareWithToday()", "creator" => "Steelwix", "release" => "02/03/2023");
         $name = "My friend";
-        try {
-            $serializer = new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
-            $servicesPackage = $serializer->serialize($services, 'json');
-        } catch (CircularReferenceException $e) {
-            $servicesPackage = $serializer->serialize($services, 'json', [
-                ObjectNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object) {
-                    return $object->getId();
-                }
-            ]);
-        }
         return $this->render('default/main.html.twig', ['name' => $name, 'services' => $services]);
     }
 }

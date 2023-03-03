@@ -25,7 +25,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $email = null;
 
     #[ORM\Column]
-    private array $roles = [];
+    private array $roles = ["ROLE_USER"];
 
     /**
      * @var string The hashed password
@@ -44,6 +44,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'creator', targetEntity: Service::class)]
     private Collection $services;
+
+    #[ORM\Column(length: 255)]
+    private ?string $username = null;
 
     public function __construct()
     {
@@ -182,6 +185,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $service->setCreator(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
 
         return $this;
     }
