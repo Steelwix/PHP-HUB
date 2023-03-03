@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}PHP HUB
+{% block title %}Hello MainController!
 {% endblock %}
 
 {% block body %}
-	<div
-		id="vue-home">{# L'appli Vue.js vivra ici #}
-	</div>
+	<div {{ vue_component('Home', { 'name': name } ) }}></div>
 {% endblock %}

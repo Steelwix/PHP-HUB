@@ -55,13 +55,13 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = '3.23';
     })
+    .enableVueLoader()
 
     // enables Sass/SCSS support
     //.enableSassLoader()
 
     // uncomment if you use TypeScript
-    .enableTypeScriptLoader()
-    .enableVueLoader(() => { }, { runtimeCompilerBuild: false })
+    //.enableTypeScriptLoader()
 
     // uncomment if you use React
     //.enableReactPreset()
@@ -75,4 +75,3 @@ Encore
     ;
 
 module.exports = Encore.getWebpackConfig();
-
