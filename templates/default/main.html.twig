@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!
+{% block title %}PHP HUB
 {% endblock %}
 
 {% block body %}
 
-	<div {{ vue_component('Home', { 'name': name, 'services': services } ) }}></div>
+	<div {{ vue_component('Home', { 'user': user, 'services': services } ) }}></div>
 
 {% endblock %}

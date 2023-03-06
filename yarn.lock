@@ -1724,6 +1724,14 @@ buffer-from@^1.0.0:
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
   integrity sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==
 
+bukwild-stylus-library@^3.1.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/bukwild-stylus-library/-/bukwild-stylus-library-3.2.1.tgz#abea66a731d3339938daeb2dfc33bfa473bac1d4"
+  integrity sha512-MgaFjTgd0oJO2dwOTzKMig0bSMjzqndhNOCkV05rsPoNlmY/8weCdWFVWUwujGWMTdgRqYsa+oVjGy76KGBwLA==
+  dependencies:
+    stylus-easing "^1"
+    stylus-type-utils "^0"
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -4063,6 +4071,16 @@ stylehacks@^5.1.1:
     browserslist "^4.21.4"
     postcss-selector-parser "^6.0.4"
 
+stylus-easing@^1:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stylus-easing/-/stylus-easing-1.0.0.tgz#1ba3177903a3d3c9605c83ebf71f1895b9b9e5a1"
+  integrity sha512-M2/GG/RXnrVZpXlrWC1gs8JXCXXrLENF33W1KQMhcmxKwTbGup4a1cJh+uZalQL8mLtfegocM+6+u0YHqvcgyg==
+
+stylus-type-utils@^0:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/stylus-type-utils/-/stylus-type-utils-0.0.3.tgz#f048334728bb5144ecd599c627553db64ea0a6bb"
+  integrity sha512-E1yoznMW1fFSm2OUF+oEp41KWSXoTYPEBgpRVAASVPG45mrnCZzs7qmA+0bjegJ9vLRPoYeX38mU3RJFk6BphQ==
+
 supports-color@^5.3.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
@@ -4263,6 +4281,13 @@ vue-loader@^17.0.1:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
+
+vue-ssr-carousel@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/vue-ssr-carousel/-/vue-ssr-carousel-1.9.1.tgz#2a2f194d48fad03c1a39e2b3b3fc441e18460911"
+  integrity sha512-kClT6g4LztXOv5BbAlb4mlsxMKhiv1ngC0y9YxPjTPaMu/hUXA3GceRCFQAGFxhMaBxeRFSes4D60ZH9oaqWpg==
+  dependencies:
+    bukwild-stylus-library "^3.1.0"
 
 vue-template-compiler@^2.7.14:
   version "2.7.14"

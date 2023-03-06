@@ -22,7 +22,8 @@ class DefaultController extends AbstractController
         $services[] = array("id" => 2, "title" => "MediaManager", "code" => "public function newIllustration()", "creator" => "Steelwix", "release" => "02/03/2023");
         $services[] = array("id" => 3, "title" => "MessageGenerator", "code" => "getHappyMessage()", "creator" => "odmgidia", "release" => "02/03/2023");
         $services[] = array("id" => 4, "title" => "DateCompare", "code" => "compareWithToday()", "creator" => "Steelwix", "release" => "02/03/2023");
-        $name = "My friend";
-        return $this->render('default/main.html.twig', ['name' => $name, 'services' => $services]);
+        $rawUser = $this->getUser();
+        $user = json_encode($rawUser);
+        return $this->render('default/main.html.twig', ['user' => $user, 'services' => $services]);
     }
 }
