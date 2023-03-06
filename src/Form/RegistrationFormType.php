@@ -31,7 +31,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'label' => 'Email'
             ])
-            ->add('RGPDConsent', CheckboxType::class, [
+            ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -40,7 +40,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'label' => 'J\'accepte les conditions d\'utilisation  '
             ])
-            ->add('plainpassword', PasswordType::class, [
+            ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
