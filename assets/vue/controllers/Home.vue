@@ -5,7 +5,8 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1>PHP HUB</h1>
-                <p>All services, methods and templates made for you, <span v-if="user.username">{{ user.username
+                <p>All services, methods and templates made for you, <span v-if="user">{{
+                    user.username
                 }}</span><span v-else>dude</span></p>
             </div>
 
@@ -14,7 +15,6 @@
                 <div class="slider">
 
                     <!-- slide 1 -->
-
                     <div class="slider-items">
                         <div v-for="service in services">
                             <div class="slide card bg-dark col-12 mh-500 d-flex align-items-stretch">
@@ -33,6 +33,8 @@
 
                     </div>
 
+
+
                     <!-- Control buttons -->
                     <button class="btn btn-next"> <i class="bi bi-arrow-right-circle-fill"></i> </button>
                     <button class="btn btn-prev">
@@ -43,12 +45,24 @@
     </div>
 </template>
 
-<script setup>
-const props = defineProps({
-    user: Object,
-    services: Array
-});
+<script>
+export default {
+    props: {
+        services: Array,
+        user: Object
+    },
+    created() {
+        console.log(this.services)
+        console.log(JSON.parse(this.user))
+    },
 
+    data() {
+        return {
+            services: this.services,
+            user: JSON.parse(this.user)
 
-console.log(props.user)
+        }
+    }
+}
 </script>
+
