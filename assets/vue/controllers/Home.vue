@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1>PHP HUB</h1>
-                <p>All services, methods and templates made for you, <span v-if="user">{{ user
+                <p>All services, methods and templates made for you, <span v-if="user.username">{{ user.username
                 }}</span><span v-else>dude</span></p>
             </div>
 
@@ -44,11 +44,11 @@
 </template>
 
 <script setup>
-
 const props = defineProps({
     user: Object,
     services: Array
 });
+
 
 console.log(props.user)
 </script>

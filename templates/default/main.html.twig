@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-
+	{{ dump(user) }}
 	<div {{ vue_component('Home', { 'user': user, 'services': services } ) }}></div>
 
 {% endblock %}
